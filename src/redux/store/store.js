@@ -22,7 +22,7 @@ export default () => {
     persistCombineReducers(authPersistConfig, rootReducer),
     composeEnhancer(applyMiddleware(sagaMiddleware))
   );
-  const persistor = persistStore(store);
+  const persister = persistStore(store);
   sagaMiddleware.run(rootSaga);
-  return { store, persistor };
+  return { store, persister };
 };

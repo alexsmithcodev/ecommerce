@@ -6,10 +6,10 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import AppRouter from '@/routers/AppRouter';
 
-const App = ({ store, persistor }) => (
+const App = ({ store, persister }) => (
   <StrictMode>
     <Provider store={store}>
-      <PersistGate loading={<Preloader />} persistor={persistor}>
+      <PersistGate loading={<Preloader />} persister={persister}>
         <AppRouter />
       </PersistGate>
     </Provider>
@@ -18,7 +18,7 @@ const App = ({ store, persistor }) => (
 
 App.propTypes = {
   store: PropType.any.isRequired,
-  persistor: PropType.any.isRequired
+  persister: PropType.any.isRequired
 };
 
 export default App;
